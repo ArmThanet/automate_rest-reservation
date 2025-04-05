@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Reservation System</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
+    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; }
+    label { display: block; margin-top: 15px; }
+    input, select, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+    button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #45a049; }
+    nav { text-align: center; margin-bottom: 20px; }
+    nav a { margin: 0 10px; text-decoration: none; color: #4CAF50; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#login">Login</a>
+  <a href="#signup">Sign Up</a>
+  <a href="#reserve">Reserve Table</a>
+  <a href="#profile">User Profile</a>
+</nav>
+
+<div id="login" class="container">
+  <h2>Login</h2>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<div id="signup" class="container">
+  <h2>Sign Up</h2>
+  <form>
+    <label for="newusername">Username:</label>
+    <input type="text" id="newusername" name="newusername">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="newpassword">Password:</label>
+    <input type="password" id="newpassword" name="newpassword">
+
+    <button type="submit">Create Account</button>
+  </form>
+</div>
+<div id="reserve" class="container">
+  <h2>Reserve a Table</h2>
+  <form id="reservationForm">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time">
+
+    <label for="guests">Number of Guests:</label>
+    <select id="guests" name="guests">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5+</option>
+    </select>
+
+    <label for="notes">Notes:</label>
+    <textarea id="notes" name="notes" rows="3"></textarea>
+
+    <button type="submit">Submit Reservation</button>
+  </form>
+
+  <!-- Container for showing the confirmation message -->
+  <div id="confirmationMessage" style="display:none; color: green;">
+    การจองเสร็จสมบูรณ์
+  </div>
+</div>
+
+<script>
+  // Listen for the form submission
+  document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting to a server
+    
+    // After submission, show the confirmation message
+    document.getElementById('confirmationMessage').style.display = 'block';
+
+    // Optionally, reset the form after submission
+    this.reset(); // Clears all input fields
+  });
+</script>
+
+<div id="profile" class="container">
+  <h2>User Profile</h2>
+  <p><strong>Username:</strong> testuser</p>
+  <p><strong>Email:</strong> testuser@example.com</p>
+  <p><strong>Upcoming Reservations:</strong></p>
+  <ul>
+    <li>April 10, 2025 - 6:00 PM - 2 Guests</li>
+  </ul>
+  <button>Update Profile</button>
+</div>
+
+</body>
+</html>
