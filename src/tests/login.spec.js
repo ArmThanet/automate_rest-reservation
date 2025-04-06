@@ -15,8 +15,6 @@ test.describe('Login Page', () => {
     
         await loginPage.fillUserPass(username, password);
         await loginPage.clickLoginButton();
-        // const title = await page.title();
-        // expect(title).toBe('Reservation Mock');
         await loginPage.clickReserveLink();
 
         await loginPage.selectTomorrowDate();
