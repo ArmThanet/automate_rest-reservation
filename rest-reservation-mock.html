@@ -54,9 +54,10 @@
     <button type="submit">Create Account</button>
   </form>
 </div>
+
 <div id="reserve" class="container">
   <h2>Reserve a Table</h2>
-  <form id="reservationForm">
+  <form>
     <label for="date">Date:</label>
     <input type="date" id="date" name="date">
 
@@ -77,19 +78,7 @@
 
     <button type="submit">Submit Reservation</button>
   </form>
-
-  <div id="confirmationMessage" style="display:none; color: green;">
-    การจองเสร็จสมบูรณ์
-  </div>
 </div>
-
-<!-- <script>
-  document.getElementById('reservationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    document.getElementById('confirmationMessage').style.display = 'block';
-    this.reset(); 
-  });
-</script> -->
 
 <div id="profile" class="container">
   <h2>User Profile</h2>
