@@ -78,22 +78,16 @@
     <button type="submit">Submit Reservation</button>
   </form>
 
-  <!-- Container for showing the confirmation message -->
   <div id="confirmationMessage" style="display:none; color: green;">
     การจองเสร็จสมบูรณ์
   </div>
 </div>
 
 <script>
-  // Listen for the form submission
   document.getElementById('reservationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting to a server
-    
-    // After submission, show the confirmation message
+    event.preventDefault(); 
     document.getElementById('confirmationMessage').style.display = 'block';
-
-    // Optionally, reset the form after submission
-    this.reset(); // Clears all input fields
+    this.reset(); 
   });
 </script>
 

@@ -2,7 +2,8 @@ import { Page } from "@playwright/test";
 import path from 'path';
 
 export class LoginPage {
-    baseurl = "file://" + path.normalize(path.resolve("src/rest-reservation-mock.html"));
+
+  baseurl = "http://127.0.0.1:5500/rest-reservation-mock.html";
   
 
   locatorusername = "#username";
@@ -30,6 +31,7 @@ export class LoginPage {
   }
 
   async goto() {
+    console.log("baseurl", this.baseurl);
     await this.page.goto(this.baseurl);
   }
 

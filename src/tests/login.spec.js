@@ -5,12 +5,13 @@ import { validUser } from '../test-data/user';
 test.describe('Login Page', () => {
 
     test.beforeEach(async ({ loginPage }) => {
+        
         await loginPage.goto();
       });
 
     const username = validUser[0].username;
     const password = validUser[0].password;
-    test('TC001:Valid User Login', async ({ loginPage }) => {
+    test('TC001:User Login and Book Table Successfully', async ({ loginPage }) => {
     
         await loginPage.fillUserPass(username, password);
         await loginPage.clickLoginButton();
